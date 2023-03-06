@@ -15,3 +15,8 @@ app.listen(port, () => {
 app.get('/musicians',async(req,res)=>{
     res.json(await Musician.findAll())
 })
+
+
+app.get('/musicians/:id',async(req,res)=>{
+    res.json(await Musician.findByPk(req.params.id))
+})
